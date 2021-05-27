@@ -1,10 +1,7 @@
 "use strict";
 
-$("#swal-1").click(function() {
-	swal('Hello');
-});
 
-$("#swal-2").click(function() {
+$("swal-2").click(function() {
 	swal('Good Job', 'You clicked the button!', 'success');
 });
 
@@ -20,21 +17,22 @@ $("#swal-5").click(function() {
 	swal('Good Job', 'You clicked the button!', 'error');
 });
 
-$("#swal-6").click(function() {
+$(".btn-delete").click(function(e) {
+  e.preventDefault();
+
+  const href = $(this).attr('href');
   swal({
-      title: 'Are you sure?',
-      text: 'Once deleted, you will not be able to recover this imaginary file!',
+      title: 'Apakah anda yakin ?',
+      text: 'Data yang dihapus tidak dapat dikembalikan!',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
     })
     .then((willDelete) => {
       if (willDelete) {
-      swal('Poof! Your imaginary file has been deleted!', {
-        icon: 'success',
-      });
+        document.location.href = href;
       } else {
-      swal('Your imaginary file is safe!');
+      swal('Data tidak jadi dihapus!');
       }
     });
 });

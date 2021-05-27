@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Login');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -36,9 +36,10 @@ $routes->get('/', 'Home::index');
 $routes->get('peminjaman', 'Peminjaman::index');
 
 $routes->get('peminjaman', 'Peminjaman::list');
-
+$routes->get('/peminjaman/edit/(:segment)', 'Peminjaman::edit/$1');
 $routes->delete('peminjaman', 'Peminjaman::delete');
 $routes->get('peminjaman', 'Peminjaman::detail/$1');
+
 
 
 /*

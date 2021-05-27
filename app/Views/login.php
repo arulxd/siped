@@ -26,12 +26,23 @@
                     <div class="p-4 m-3">
                         <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">Siped</span></h4>
                         <h5 class="text-dark font-weight-normal"><span class="font-weight-bold">Sistem pengembalian dokumen Rekam Medis</span></h5>
-                        <form method="POST" action="#" class="needs-validation" novalidate="">
+
+                        <?php if (session()->getFlashdata('error')) : ?>
+                            <div class="alert alert-danger alert-dismissible show fade">
+                                <div class="alert-body">
+                                    <button class="close" data-dismis="alert">x</button>
+                                    <?= session()->getFlashdata('error'); ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
+                        <form method="POST" action="<?= site_url('login/loginProcess') ?> " class="needs-validation" novalidate="">
+                            <?= csrf_field() ?>
                             <div class="form-group">
                                 <label for="text">Nama</label>
-                                <input id="nama" type="text" class="form-control" name="nama" tabindex="1" required autofocus>
+                                <input id="nama_user" type="text" class="form-control" name="nama_user" tabindex="1" required autofocus>
                                 <div class="invalid-feedback">
-                                    Please fill in your email
+                                    Silakan Masukan Username Anda
                                 </div>
                             </div>
 
@@ -41,7 +52,7 @@
                                 </div>
                                 <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
                                 <div class="invalid-feedback">
-                                    please fill in your password
+                                    Silakan Masukan Passworf Anda
                                 </div>
                             </div>
 

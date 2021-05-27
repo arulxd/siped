@@ -1,6 +1,8 @@
 <?= $this->extend('layout/default') ?>
 
 <?= $this->section('content') ?>
+
+
 <section class="section">
     <div class="section-header ">
         <h1 class="space">Formulir Peminjaman Dokumen Rekam Medis</h1>
@@ -14,6 +16,8 @@
                         <?= session()->getFlashdata('pesan'); ?>
                     </div>
                 <?php endif; ?>
+
+
             </div>
             <div class="card-body">
                 <form action="/peminjaman/save" method="post">
@@ -53,7 +57,7 @@
                     </div>
             </div>
             <div class="card-footer">
-                <button class="btn btn-primary">Submit</button>
+                <button class="btn btn-primary swal-8" id="swal-2">Submit</button>
             </div>
         </div>
     </div>
