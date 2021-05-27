@@ -18,13 +18,5 @@ class Login extends BaseController
 
 	public function loginProcess()
 	{
-		$post = $this->request->getPost();
-		$query = $this->db->table('user')->getWhere(['nama_user' => $post['nama_user']]);
-		$user = $query->getRow();
-		if ($user) {
-			echo "yukkk";
-		} else {
-			return redirect()->back()->with('error', 'email tidak ditemukan');
-		}
 	}
 }
