@@ -44,6 +44,7 @@
                       <th>No Rekam Medis</th>
                       <th>Nama Pasien</th>
                       <th>Nama Peminjam</th>
+                      <th>Status</th>
                       <th>Tanggal Kembali</th>
                     </tr>
                   </thead>
@@ -56,6 +57,7 @@
                     <td><?php echo $row->no_rm; ?></td>
                     <td><?php echo $row->nama_pasien; ?></td>
                     <td><?php echo $row->nama_peminjam; ?></td>
+                    <td><?php echo $row->status; ?></td>
                     <td><?php echo $row->tanggal_kembali; ?></td>
 
                     </tr>
@@ -69,18 +71,18 @@
             <div class="card-body card-block">
               <div class="row form-group">
                 <div id="form-tanggal" class="col col-md-9"><label for="select" class=" form-control-label"></label></div>
-                <div id="form-tanggal" class="col col-md-3"><label for="select" class=" form-control-label">Banyumas, <?php echo date('d M Y') ?></label></div>
+                <div id="form-tanggal" class="col col-md-3"><label for="select" class=" form-control-label">Tuban, <?php echo date('d M Y') ?></label></div>
 
               </div>
               <div class="row form-group">
                 <div id="form-tanggal" class="col col-md-9"><label for="select" class=" form-control-label"></label></div>
-                <div id="form-tanggal" class="col col-md-3"><label for="select" class=" form-control-label">Creator</label></div>
+                <div id="form-tanggal" class="col col-md-3"><label for="select" class=" form-control-label">Petugas</label></div>
 
               </div>
               <br><br><br>
               <div class="row form-group">
                 <div id="form-tanggal" class="col col-md-9"><label for="select" class=" form-control-label"></label></div>
-                <div id="form-tanggal" class="col col-md-3"><label for="select" class=" form-control-label">Coding Asik</label></div>
+                <div id="form-tanggal" class="col col-md-3"><label for="select" class=" form-control-label">Test</label></div>
 
               </div>
             </div>

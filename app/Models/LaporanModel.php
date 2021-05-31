@@ -14,10 +14,18 @@ class laporanModel extends Model
     }
 
 
-    function filterbytanggal($tanggalawal, $tanggalakhir)
+    public function filterbytanggal($tanggalawal, $tanggalakhir)
     {
 
-        $query = $this->db->query("SELECT * FROM peminjaman WHERE tanggal BETWEEN '$tanggalawal' and '$tanggalakhir' ORDER BY tanggal ASC ");
+        $query = $this->db->query("SELECT * FROM peminjaman WHERE status ='dikembalikan' and tanggal BETWEEN '$tanggalawal' and '$tanggalakhir' ORDER BY tanggal ASC ");
+
+        return $query->getResult();
+    }
+
+    public function filterbybulan($tahun1, $bulanawal, $bulanakhir)
+    {
+
+        $query = $this->db->query("SELECT * from peminjaman where  YEAR(tanggal) = '$tahun1' and MONTH(tanggal) BETWEEN '$bulanawal' and '$bulanakhir' and status ='dikembalikan' ORDER BY tanggal ASC ");
 
         return $query->getResult();
     }
