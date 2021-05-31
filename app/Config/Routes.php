@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Login::index');
 $routes->get('/', 'Home::index');
 $routes->get('peminjaman', 'Peminjaman::index');
+$routes->get('laporan', 'Laporan::index');
 
 $routes->get('peminjaman', 'Peminjaman::list');
 $routes->get('/peminjaman/edit/(:segment)', 'Peminjaman::edit/$1');
