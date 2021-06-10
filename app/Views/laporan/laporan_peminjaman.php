@@ -109,7 +109,7 @@
 
                             <div class="row form-group">
                                 <div class="col col-md-2">
-                                    <label for="select" class=" form-control-label">Dari tanggal</label>
+                                    <label for="select" class=" form-control-label">Dari Bulan</label>
                                 </div>
                                 <div class="col col-md-4">
                                     <select name="bulanawal" id="bulanawal" class="form-control form-control-user" title="Pilih Bulan">
@@ -129,7 +129,7 @@
                                     </select>
                                 </div>
                                 <div class="col col-md-2">
-                                    <label for="select" class=" form-control-label">Sampai tanggal</label>
+                                    <label for="select" class=" form-control-label">Sampai Bulan </label>
                                 </div>
                                 <div class="col col-md-4">
                                     <select name="bulanakhir" id="bulanakhir" class="form-control form-control-user" title="Pilih Bulan">
@@ -153,6 +153,38 @@
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-success">Print</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6" id="tahunfilter">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Form Filter by Tahun </h4>
+                    </div>
+                    <form id="formtahun" action="Laporan/filter" method="post" target="_blank">
+                        <input name="valnilai" type="hidden">
+                        <div class="card-body card-block">
+
+                            <input type="hidden" name="nilaifilter" value="3">
+
+                            <div class="row form-group">
+                                <div id="form-tanggal" class="col col-md-2"><label for="select" class=" form-control-label">Pilih Tahun</label></div>
+                                <div class="col-12 col-md-10">
+                                    <select name="tahun2" id="tahun2" class="form-control form-control-user" title="Pilih Tahun">
+                                        <option value="">-PILIH-</option>
+                                        <?php foreach ($tahun as $thn) : ?>
+                                            <option value="<?php echo $thn->tahun; ?>"><?php echo $thn->tahun; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-success"> Print</button>
 
                         </div>
                     </form>

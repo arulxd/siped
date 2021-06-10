@@ -31,7 +31,7 @@ class Laporan extends BaseController
         $tahun1 = $this->request->getVar('tahun1');
         $bulanawal = $this->request->getVar('bulanawal');
         $bulanakhir = $this->request->getVar('bulanakhir');
-
+        $tahun2 = $this->request->getVar('tahun2');
         $nilaifilter = $this->request->getVar('nilaifilter');
 
 
@@ -53,7 +53,13 @@ class Laporan extends BaseController
             ];
 
             return view('laporan/print_laporan', $data);
-        } else {
+        } elseif ($nilaifilter == 3) {
+
+            $data = [
+                'title' =>  "Laporan Penjualan Per Tahun",
+                'subtitle' =>  ' Tahun : ' . $tahun2,
+                'datafilter' => $this->laporanModel->filterbytahun($tahun2, $bulanawal, $bulanakhir)
+            ];
             return view('laporan/print_laporan', $data);
         }
     }

@@ -103,10 +103,10 @@
             </div>
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+                    Copyright &copy; 2021 Instalasi Rekam Medis
                 </div>
                 <div class="footer-right">
-                    2.3.0
+                    V.0.0.1
                 </div>
             </footer>
         </div>

@@ -27,24 +27,27 @@
                         <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">Siped</span></h4>
                         <h5 class="text-dark font-weight-normal"><span class="font-weight-bold">Sistem pengembalian dokumen Rekam Medis</span></h5>
 
-                        <?php if (session()->getFlashdata('error')) : ?>
-                            <div class="alert alert-danger alert-dismissible show fade">
-                                <div class="alert-body">
-                                    <button class="close" data-dismis="alert">x</button>
-                                    <?= session()->getFlashdata('error'); ?>
-                                </div>
-                            </div>
-                        <?php endif; ?>
+                        <?= view('Myth\Auth\Views\_message_block') ?>
 
-                        <form method="POST" action="<?= site_url('login/loginProcess') ?> " class="needs-validation" novalidate="">
-                            <?= csrf_field() ?>
-                            <div class="form-group">
-                                <label for="text">Nama</label>
-                                <input id="nama_user" type="text" class="form-control" name="nama_user" tabindex="1" required autofocus>
-                                <div class="invalid-feedback">
-                                    Silakan Masukan Username Anda
+                        <form action="<?= route_to('login') ?>" method="post">
+                            <?php if ($config->validFields === ['email']) : ?>
+                                <div class="form-group">
+                                    <label for="login"><?= lang('Auth.email') ?></label>
+                                    <input type="email" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.email') ?>">
+                                    <div class="invalid-feedback">
+                                        <?= session('errors.login') ?>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php else : ?>
+                                <div class="form-group">
+                                    <label for="login"><?= lang('Auth.emailOrUsername') ?></label>
+                                    <input id="username" type="text" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.emailOrUsername') ?>" name="username" tabindex="1" required autofocus>
+                                    <div class="invalid-feedback">
+                                        <?= session('errors.login') ?>
+                                    </div>
+
+                                </div>
+                            <?php endif; ?>
 
                             <div class="form-group">
                                 <div class="d-block">

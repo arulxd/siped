@@ -60,6 +60,7 @@
             </div>
             <div class="card-footer">
                 <button class="btn btn-primary swal-8" id="swal-2">Ubah Data</button>
+                <a href="/peminjaman/list" class="btn btn-danger">Kembali</a>
             </div>
         </div>
     </div>

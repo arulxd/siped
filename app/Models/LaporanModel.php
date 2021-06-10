@@ -29,4 +29,12 @@ class laporanModel extends Model
 
         return $query->getResult();
     }
+
+    function filterbytahun($tahun2)
+    {
+
+        $query = $this->db->query("SELECT * from peminjaman where YEAR(tanggal) = '$tahun2'  ORDER BY tanggal ASC ");
+
+        return $query->getResult();
+    }
 }

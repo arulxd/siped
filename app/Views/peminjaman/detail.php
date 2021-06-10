@@ -8,50 +8,50 @@
         <h1>Detail Dokumen Rekam Medis</h1>
     </div>
     <div class="section-body">
-        <div class="col-12 col-md-8 col-lg-8">
+        <div class="col-12 col-md-10 col-lg-10">
             <div class="card">
                 <div class="card-body">
-                    <?php foreach ($peminjamans as $pmnj) : ?>
-                        <div class="form-row">
-                            <div class="form-group col-md-4 ">
-                                <label for="">Tanggal Peminjaman</label>
-                                <li class=""><?= $pmnj['tanggal']; ?></li>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="">Nomor RM</label>
-                                <li class=""><?= $pmnj['no_rm']; ?></li>
-                            </div>
 
-                            <div class="form-group col-md-4">
-                                <label for="">Nama Pasien</label>
-                                <li class=""><?= $pmnj['nama_pasien']; ?></li>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="">Nama Peminjam</label>
-                                <li class=""><?= $pmnj['nama_peminjam']; ?></li>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="">Tanggal Kembali</label>
-                                <li class=""><?= $pmnj['tanggal_kembali']; ?></li>
-                            </div>
-
-                            <div class="form-group col-md-4">
-                                <label for="">Keperluan Peminjaman</label>
-                                <li class=""><?= $pmnj['keperluan']; ?></li>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="">Status Dokumen</label>
-                                <?php
-                                if ($pmnj['status'] == 'dipinjam') { ?>
-                                    <span class="badge badge-danger"><?= $pmnj['status'] ?></span>
-                                <?php } ?>
-                                <?php
-                                if ($pmnj['status'] == 'dikembalikan') { ?>
-                                    <span class="badge badge-success"><?= $pmnj['status'] ?></span>
-                                <?php } ?>
-                            </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4 ">
+                            <label for="">Tanggal Peminjaman</label>
+                            <li class=""><?= $peminjamans['tanggal']; ?></li>
                         </div>
-                    <?php endforeach; ?>
+                        <div class="form-group col-md-4">
+                            <label for="">Nomor RM</label>
+                            <li class=""><?= $peminjamans['no_rm']; ?></li>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="">Nama Pasien</label>
+                            <li class=""><?= $peminjamans['nama_pasien']; ?></li>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Nama Peminjam</label>
+                            <li class=""><?= $peminjamans['nama_peminjam']; ?></li>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Tanggal Kembali</label>
+                            <li class=""><?= $peminjamans['tanggal_kembali']; ?></li>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="">Keperluan Peminjaman</label>
+                            <li class=""><?= $peminjamans['keperluan']; ?></li>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Status Dokumen</label>
+                            <?php
+                            if ($peminjamans['status'] == 'dipinjam') { ?>
+                                <span class="badge badge-danger"><?= $peminjamans['status'] ?></span>
+                            <?php } ?>
+                            <?php
+                            if ($peminjamans['status'] == 'dikembalikan') { ?>
+                                <span class="badge badge-success"><?= $peminjamans['status'] ?></span>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <a href="/peminjaman/list" class="btn btn-primary">Kembali</a>
                 </div>
             </div>
 </section>
